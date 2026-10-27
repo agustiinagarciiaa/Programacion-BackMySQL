@@ -1,0 +1,24 @@
+CREATE DATABASE IF NOT EXISTS tareas_db
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE tareas_db;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS tareas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  texto VARCHAR(500) NOT NULL,
+  completada BOOLEAN NOT NULL DEFAULT FALSE,
+  usuario_id INT NOT NULL,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+-- Usuario propio para la app (ejecutar como root)
+CREATE USER IF NOT EXISTS 'tareas_app'@'localhost' IDENTIFIED BY 'una-clave-segura';
+GRANT SELECT, INSERT, UPDATE, DELETE ON tareas_db.* TO 'tareas_app'@'localhost';
