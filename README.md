@@ -1,7 +1,10 @@
 # 📝 API de Tareas con Node.js, Express y MySQL
 
 Trabajo práctico — Tecnicatura Universitaria en Programación (UTN)
-**Alumna:** [Tu nombre y apellido]
+**Alumnos:** 
+-Luciano Fernandez Dislacio
+-Agustina Yazmin Garcia
+-Nadia Antonella Ruiz
 
 API REST para registrarse, iniciar sesión y administrar tareas personales. Cada usuario ve y modifica **solo sus propias tareas**. Parte del código de autenticación de la clase 17 (bcrypt + JWT), lo organiza en capas y reemplaza SQLite por MySQL.
 
