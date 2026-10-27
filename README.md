@@ -80,43 +80,6 @@ Ejemplo con `POST /tareas`:
 
 ---
 
-## 🚀 Instalación y uso
-
-### Requisitos
-
-- Node.js 18 o superior
-- MySQL 8 (o XAMPP / Laragon / Docker) corriendo en el puerto 3306
-
-### Pasos
-
-1. **Clonar el repositorio** e ingresar a la carpeta:
-   ```bash
-   git clone <url-del-repositorio>
-   cd proyecto-tareas
-   ```
-
-2. **Crear la base, las tablas y el usuario** (como root):
-   ```bash
-   mysql -u root -p < database/schema.sql
-   ```
-   Opcional con Docker:
-   ```bash
-   docker run --name mysql-tareas -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql:8
-   ```
-
-3. **Instalar dependencias:**
-   ```bash
-   npm install
-   ```
-
-4. **Configurar variables de entorno:** copiar `.env.example` a `.env` y completarlo.
-
-5. **Iniciar el servidor:**
-   ```bash
-   npm run dev     # con nodemon
-   npm start       # sin nodemon
-   ```
-
 ### Variables de entorno (`.env`)
 
 ```env
